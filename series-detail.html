@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Серии - MR_SKKRY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <a href="series.html" class="back-btn">← Назад</a>
+            <h1 id="series-title">Загрузка...</h1>
+        </div>
+        <div id="seasons-list" class="item-grid"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const series = JSON.parse(localStorage.getItem('currentSeries'));
+            if (series) {
+                document.getElementById('series-title').textContent = series.title;
+                loadSeriesEpisodes(series.id);
+            } else {
+                window.location.href = 'series.html';
+            }
+        });
+
+        async function loadSeriesEpisodes(seriesId) {
+            try {
+                const response = await fetch(`data/series/${seriesId}.json`);
+                const data = await response.json();
+                const container = document.getElementById('seasons-list');
+                
+                data.seasons.forEach((season) => {
+                    const seasonDiv = document.createElement('div');
+                    seasonDiv.style.marginBottom = '2rem';
+                    seasonDiv.innerHTML = `
+                        <h3 style="margin: 1.5rem 0 1rem 0; color: #2c1810;">Сезон ${season.season}</h3>
+                        <div class="series-list">
+                            ${season.episodes.map((watched, epIndex) => 
+                                `<div class="episode ${watched ? 'watched' : 'unwatched'}">
+                                    Эпизод ${epIndex + 1}
+                                </div>`
+                            ).join('')}
+                        </div>
+                    `;
+                    container.appendChild(seasonDiv);
+                });
+            } catch (error) {
+                document.getElementById('seasons-list').innerHTML = 
+                    '<p style="text-align: center; color: #666;">Данные серий временно недоступны</p>';
+            }
+        }
+    </script>
+</body>
+</html>

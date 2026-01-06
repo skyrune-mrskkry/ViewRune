@@ -1,0 +1,24 @@
+{
+    "seasons": [
+        {
+            "season": 1,
+            "episodes": [true, true, true, true, true, true, true, true]
+        },
+        {
+            "season": 2,
+            "episodes": [true, true, true, true, true, true, true, true, true]
+        },
+        {
+            "season": 3,
+            "episodes": [true, true, true, true, true, true, true, true]
+        },
+        {
+            "season": 4,
+            "episodes": [true, true, true, true, true, true, true, true, true]
+        },
+        {
+            "season": 5,
+            "episodes": [true, true, false, false, false, false, false, false]
+        }
+    ]
+}

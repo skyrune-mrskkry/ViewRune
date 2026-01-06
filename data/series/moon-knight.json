@@ -1,0 +1,8 @@
+{
+    "seasons": [
+        {
+            "season": 1,
+            "episodes": [true, true, true, true, true, true]
+        }
+    ]
+}

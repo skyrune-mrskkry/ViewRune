@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Очень Странные Дела",
+        "rating": "10/10",
+        "status": "5 сезонов",
+        "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/10953618/fa7b696a-16f3-4ddb-98a1-34f702ed6ac4/1920x",
+        "id": "stranger-things"
+    },
+    {
+        "title": "Лунный рыцарь",
+        "rating": "10/10",
+        "status": "1 сезон",
+        "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/8ed86026-6f0d-4338-8d89-1deaa03afb6a/1920x",
+        "id": "moon-knight"
+    }
+]
